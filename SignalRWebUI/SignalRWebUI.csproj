@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Contact\CreateContact.cshtml" />
+    <None Include="Views\Contact\Index.cshtml" />
+    <None Include="Views\Contact\UpdateContact.cshtml" />
+    <None Include="Views\Discount\CreateDiscount.cshtml" />
+    <None Include="Views\Discount\Index.cshtml" />
+    <None Include="Views\Discount\UpdateDiscount.cshtml" />
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
   </ItemGroup>
 
