@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SignalR.BusinessLayer\SignalR.BusinessLayer.csproj" />
     <ProjectReference Include="..\SignalR.DtoLayer\SignalR.DtoLayer.csproj" />
+    <ProjectReference Include="..\SignalRWebUI\SignalRWebUI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

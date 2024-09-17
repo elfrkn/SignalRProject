@@ -1,15 +1,15 @@
 ﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 
 <div class="main-header">
 
-	@* <script type="text/javascript">
+	<script type="text/javascript">
 
 		$(document).ready(() => {
 
-			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7186/SignalRHub").build();
+			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7134/SignalRHub").build();
 			$("#connstatus").text(connection.state);
 			connection.start().then(() => {
 				$("#connstatus").text(connection.state);
@@ -26,22 +26,22 @@
 			connection.on("ReceiveNotificationListByFalse", (value) => {
 				console.log(value);
 				$("#notilist").empty();
-				for (var i = 0; i < value.length;i++){
+				for (var i = 0; i < value.length; i++) {
 					$("#notilist").append(`<a href="#">
-					<div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
-					<div class="notif-content">
-					<span class="block">
-					${value[i].description}
-					</span>
-					<span class="time">${value[i].date}</span>
-					</div>
-					</a>
-					`)
+							<div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
+							<div class="notif-content">
+							<span class="block">
+							${value[i].description}
+							</span>
+							<span class="time">${value[i].date}</span>
+							</div>
+							</a>
+							`)
 				};
 			});
 		});
 
-	</script> *@
+	</script>
 
 	<div class="logo-header">
 		<a href="index.html" class="logo">
@@ -92,12 +92,12 @@
 							</div>
 						</li>
 						<li>
-							<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+							<a class="see-all" href="javascript:void(0);"> <strong>Tüm Bildirimleri Gör</strong> <i class="la la-angle-right"></i> </a>
 						</li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>Hizrian</span></span> </a>
+					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>HoşGeldiniz</span></span> </a>
 					<ul class="dropdown-menu dropdown-user">
 						<li>
 							<div class="user-box">
