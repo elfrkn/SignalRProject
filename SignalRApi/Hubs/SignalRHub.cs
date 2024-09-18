@@ -99,14 +99,14 @@ namespace SignalRApi.Hubs
             var value8 = _orderService.TTotalOrderCount();
             await Clients.All.SendAsync("ReceiveTotalOrderCount", value8);
 
-            //var value9 = _productService.TProductPriceBySteakBurger();
-            //await Clients.All.SendAsync("ReceiveProductPriceBySteakBurger", value9);
+            var value9 = _productService.TProductPriceBySteakBurger();
+            await Clients.All.SendAsync("ReceiveProductPriceBySteakBurger", value9);
 
-            //var value10 = _productService.TTotalPriceByDrinkCategory();
-            //await Clients.All.SendAsync("ReceiveTotalPriceByDrinkCategory", value10);
+            var value10 = _productService.TTotalPriceByDrinkCategory();
+            await Clients.All.SendAsync("ReceiveTotalPriceByDrinkCategory", value10);
 
-            //var value11 = _productService.TTotalPriceBySaladCategory();
-            //await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
+            var value11 = _productService.TTotalPriceBySaladCategory();
+            await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
         }
 
 		public async Task GetBookingList()
