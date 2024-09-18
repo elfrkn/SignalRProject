@@ -16,7 +16,23 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
         }
 
-        public List<Discount> GetListByStatusTrue()
+		public void ChangeStatusToFalse(int id)
+		{
+            var context = new SignalRContext();
+            var values = context.Discounts.Find(id);
+            values.Status = false;
+            context.SaveChanges();
+		}
+
+		public void ChangeStatusToTrue(int id)
+		{
+			var context = new SignalRContext();
+			var values = context.Discounts.Find(id);
+			values.Status = true;
+			context.SaveChanges();
+		}
+
+		public List<Discount> GetListByStatusTrue()
         {
             var contex = new SignalRContext();
             return contex.Discounts.Where(x => x.Status == true).ToList();

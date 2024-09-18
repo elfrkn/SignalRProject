@@ -46,5 +46,15 @@ namespace SignalR.BusinessLayer.Concrete
         {
             return _discountDal.GetListByStatusTrue();
         }
-    }
+
+		public void TChangeStatusToTrue(int id)
+		{
+            _discountDal.ChangeStatusToTrue(id);
+		}
+
+		public void TChangeStatusToFalse(int id)
+		{
+            _discountDal.ChangeStatusToFalse(id);
+		}
+	}
 }

@@ -5,6 +5,11 @@
     
 }
 
+@{
+	string color = "";
+}
+
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
@@ -45,12 +50,25 @@
 												 </thead>
 												 <tbody>`
 					$.each(value, (index, item) => {
+						if (item.description == "Rezervasyon Yapıldı") {
+							
+							color = "badge badge-primary px-2";
+						}
+						else if (item.description =="Rezervasyon Onaylandı") {
+							
+							color = "badge badge-success px-2";
+						}
+						else if (item.description == "Rezervasyon İptal Edildi") {
+
+							color = "badge badge-warning px-2";
+						}
+
 						tablehtml += `<tr>
 												<th>${index + 1}</th>
 												<td>${item.name}</td>
 												<td>${item.phone}</td>
 												<td>${item.personCount}</td>
-												<td>${item.description}</td>
+											    <td><span class="@color">${item.description}</span></td>
 												<td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Sil</a></td>
 												<td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Güncelle</a></td>
 												<td><a href="/Booking/BookingStatusApproved/${item.bookingID}" class="btn btn-outline-info">Onayla</a></td>

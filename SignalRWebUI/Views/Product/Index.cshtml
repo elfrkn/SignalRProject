@@ -4,6 +4,11 @@
 	Layout = "~/Views/AdminLayout/Index.cshtml";
 	int count = 0;
 }
+@{
+	string color = "";
+	string status = "";
+}
+
 
 <div class="content">
 	<div class="container-fluid">
@@ -35,12 +40,22 @@
 								@foreach (var item in Model)
 								{
 									count++;
+									if (item.ProductStatus == true)
+									{
+										status = "Stokta";
+										color = "badge badge-success px-2";
+									}
+									else if (item.ProductStatus == false)
+									{
+										status = "Tükendi";
+										color = "badge badge-warning px-2";
+									}
 									<tr>
 										<th>@count</th>
 										<td>@item.ProductName</td>
 										<td>@item.Price</td>
 										<td>@item.CategoryName</td>
-										<td>@item.ProductStatus</td>
+										<td><span class="@color"> @status</span></td>
 										<td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
 										<td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-outline-success">Güncelle</a></td>
 									</tr>

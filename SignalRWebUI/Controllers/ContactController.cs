@@ -29,6 +29,7 @@ namespace SignalRWebUI.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateContact(CreateContactDto createContactDto)
         {

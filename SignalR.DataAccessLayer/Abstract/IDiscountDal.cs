@@ -10,5 +10,8 @@ namespace SignalR.DataAccessLayer.Abstract
     public interface IDiscountDal : IGenericDal<Discount>
     {
         List<Discount> GetListByStatusTrue();
+        void ChangeStatusToTrue(int id);
+        void ChangeStatusToFalse(int id);
+
     }
 }
