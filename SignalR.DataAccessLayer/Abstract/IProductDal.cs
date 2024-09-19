@@ -21,5 +21,7 @@ namespace SignalR.DataAccessLayer.Abstract
         decimal TotalPriceByDrinkCategory();
         decimal TotalPriceBySaladCategory();
 
+        List<Product> GetLast6Product();
+
     }
 }

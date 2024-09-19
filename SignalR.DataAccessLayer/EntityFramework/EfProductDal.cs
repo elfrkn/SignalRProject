@@ -87,5 +87,12 @@ namespace SignalR.DataAccessLayer.EntityFramework
             int id = context.Categories.Where(x => x.CategoryName == "Salata").Select(y => y.CategoryID).FirstOrDefault();
             return context.Products.Where(x => x.CategoryID == id).Sum(y => y.Price);
         }
-    }
+
+		public List<Product> GetLast6Product()
+		{
+            var context = new SignalRContext();
+            var values = context.Products.Take(6).ToList();
+            return values;
+		}
+	}
 }
